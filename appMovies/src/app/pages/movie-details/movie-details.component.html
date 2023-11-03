@@ -1,0 +1,44 @@
+<div class="container mt-5 mb-5">
+  <div class="row">
+      <div class="col-md-8">
+          <h1>{{ movie?.Title }}</h1>
+          <p>{{ movie?.Year }} | {{ movie?.Rated }} | {{ movie?.Runtime }}</p>
+          <p><b>Genres:</b> {{ movie?.Genre }}</p>
+      </div>
+      <div class="col-md-4">
+          <p><b>Imdb Rating:</b> {{ movie?.imdbRating }}/10 | <b>Metascore:</b> {{ movie?.Metascore }}/100</p>
+          <p><b>Imdb Votes:</b> {{ movie?.imdbVotes }}</p>
+      </div>
+  </div>
+  <div class="row">
+      <div class="col-md-4">
+          <img class="poster" [src]="movie?.Poster"/>
+      </div>
+      <div class="col-md-8">
+          <p><b>Type: </b>{{ movie?.Type }}</p>
+          <p><b>Director: </b>{{ movie?.Director }}</p>
+          <p><b>Writers: </b>{{ movie?.Writer }}</p>
+          <p><b>Actors: </b>{{ movie?.Actors }}</p>
+          <p><b>Language: </b>{{ movie?.Language }}</p>
+          <p><b>Country: </b>{{ movie?.Country }}</p>
+          <p><b>Awards: </b>{{ movie?.Awards }}</p>
+          <p><b>DVD: </b>{{ movie?.DVD }}</p>
+          <p><b>BoxOffice: </b>{{ movie?.BoxOffice }}</p>
+          <p><b>Production: </b>{{ movie?.Production }}</p>
+          <p><b>Website: </b>{{ movie?.Website }}</p>
+
+          <br>
+          <p><b>Plot:</b><br>{{ movie?.Plot }}</p>
+          
+      </div>
+  </div>
+
+  <div class="row mt-5">
+      <h2>Ratings</h2>
+
+      <p *ngFor="let rating of movie?.Ratings">
+          <li>{{ rating.Source }} {{ rating.Value }}</li>
+      </p>
+
+  </div>
+</div>
